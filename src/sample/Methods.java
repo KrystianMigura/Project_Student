@@ -14,13 +14,8 @@ public class Methods extends Controller implements Initializable {
     public Button editButton;
 
 
-        public void asdf() {
 
-        System.out.println("test 1");
-        }
-
-//
-    public void TableOut(TableView table_info, Boolean a){
+    public void TableOut(TableView table_info){
 
         FadeTransition fadeTransition = new FadeTransition();
         fadeTransition.setDuration(Duration.millis(1500));
@@ -29,7 +24,7 @@ public class Methods extends Controller implements Initializable {
         fadeTransition.setToValue(0);
         fadeTransition.play();
 
-         a = true;
+
         }
 
 
@@ -80,15 +75,15 @@ public class Methods extends Controller implements Initializable {
         fadeTransition.play();
     }
 
-    public void pesel_text(TextField pesel_text){
+    public void pes_text(TextField pes_text){
         FadeTransition fadeTransition = new FadeTransition();
         fadeTransition.setDuration(Duration.millis(3000));
-        fadeTransition.setNode(pesel_text);
+        fadeTransition.setNode(pes_text);
         fadeTransition.setFromValue(0);
         fadeTransition.setToValue(1);
-            pesel_text.setVisible(true);
-            pesel_text.setLayoutX(504);
-            pesel_text.setLayoutY(47);
+            pes_text.setVisible(true);
+            pes_text.setLayoutX(504);
+            pes_text.setLayoutY(47);
         fadeTransition.play();
     }
 
@@ -117,23 +112,24 @@ public class Methods extends Controller implements Initializable {
         fadeTransition.play();
     }
 
-       public void Tablenewposition(TableView table_info, Boolean a){
+
+
+
+       public void Tablenewposition(TableView table_info){
 
            FadeTransition fadeTransition = new FadeTransition();
            fadeTransition.setDuration(Duration.millis(3500));
            fadeTransition.setNode(table_info);
            fadeTransition.setFromValue(0);
            fadeTransition.setToValue(1);
-               table_info.setMaxHeight(350);
-               table_info.setLayoutY(20);
-               table_info.setLayoutX(20);
-               table_info.setDisable(true);
-
+           table_info.setMaxHeight(350);
+           table_info.setLayoutY(20);
+           table_info.setLayoutX(20);
+           table_info.setDisable(true);
            fadeTransition.play();
-               a = false;
        }
 
-        public void Tableinback(TableView table_info, TextField surname_text, TextField name_text, TextField nr_tel, TextField pesel_text, TextField number_text, Button buttontest1, Button buttonback) {
+        public void Tableinback(TableView table_info, TextField surname_text, TextField name_text, TextField nr_tel, TextField pesel_text, TextField number_text, Button button1test, Button buttonback) {
             FadeTransition fadeTransition = new FadeTransition();
             fadeTransition.setDuration(Duration.millis(2500));
             fadeTransition.setNode(table_info);
