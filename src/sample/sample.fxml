@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane minHeight="700.0" minWidth="750.0" prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+   <center>
+       <TableView id="tabela" fx:id="table_info" layoutY="200" maxHeight="675.0" maxWidth="631.0" prefHeight="672.0" prefWidth="570.0">
+       <columns>
+           <TableColumn fx:id="col_id" prefWidth="35.0" resizable="false" text="id" />
+           <TableColumn fx:id="col_Imie" prefWidth="110.0" resizable="false" text="Imie" />
+           <TableColumn fx:id="col_Nazwisko" prefWidth="110.0" resizable="false" text="Nazwisko" />
+           <TableColumn fx:id="col_Pesel" prefWidth="90.0" resizable="false" text="Pesel" />
+           <TableColumn fx:id="col_Tel" prefWidth="110.0" resizable="false" text="Nmuer_Telefonu" />
+           <TableColumn fx:id="col_Edit" prefWidth="114.0" resizable="false" text="Edycja" />
+       </columns>
+
+       <columnResizePolicy>
+           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+       </columnResizePolicy>
+   </TableView>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <Pane prefHeight="105.0" prefWidth="180">
+         <children>
+
+            <Button fx:id="Add_Button" layoutX="26.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AddButton" prefHeight="25.0" prefWidth="110.0" snapToPixel="false" text="Dodaj" />
+            <TextField fx:id="number_text" layoutX="26.0" layoutY="99.0" onKeyPressed="#checkID" promptText="Id" visible="false" />
+            <TextField fx:id="name_text" layoutX="26.0" layoutY="133.0" promptText="Imie" visible="false" />
+            <TextField fx:id="surname_text" layoutX="26.0" layoutY="168.0" promptText="Nazwisko" visible="false" />
+            <TextField fx:id="pesel_text" layoutX="26.0" layoutY="168.0" onKeyPressed="#checkPesel" promptText="Pesel" visible="false" />
+            <TextField fx:id="nr_tel" layoutX="26.0" layoutY="168.0" promptText="Numer Telefonu" visible="false" />
+            <Button fx:id="button1test" layoutX="74.0" layoutY="47.0" mnemonicParsing="false" onAction="#AddButton1" text="Dodaj nowy wpis" visible="false" />
+            <Button fx:id="buttonback" layoutX="74.0" layoutY="87.0" mnemonicParsing="false" onAction="#ButtonBack" text="Powrót" visible="false" />
+            <Button fx:id="editButton" layoutX="55.0" layoutY="209.0" mnemonicParsing="false" text="Button" visible="false"/>
+            <Separator layoutX="169.0" layoutY="8.0" orientation="VERTICAL" prefHeight="651.0" prefWidth="1.0" />
+
+
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
