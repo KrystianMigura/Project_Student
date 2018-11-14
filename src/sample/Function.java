@@ -7,9 +7,7 @@ import javafx.scene.control.TextField;
 
 public class Function extends Controller {
 
-        Boolean FlagID = true;
-        Boolean FlagPes = true;
-        Boolean Flagtel = true;
+
         Function()
         {
 
@@ -24,7 +22,9 @@ public class Function extends Controller {
         }
 
 
-
+        Boolean FlagID = true;
+        Boolean Flag_Pes = true;
+        Boolean Flagtel = true;
         public void testprzycuski(TextField number_text, TextField pes_text, TextField name_text, TextField surname_text, TextField nr_tel,  Button editButton, TableView table_info){
 
 
@@ -39,12 +39,12 @@ public class Function extends Controller {
                         information.showAndWait();
                 }else{
                         users as = new users();
-
-                        checkID(number_text);
                         checkPes(pes_text);
+                        checkID(number_text);
+
                         checkTel(nr_tel);
 
-                        if( FlagID != false && FlagPes !=false && Flagtel != false) {
+                        if( FlagID != false && Flag_Pes != false && Flagtel != false) {
                                 as.setId(number_text.getText());
                                 as.setName(name_text.getText());
                                 as.setSurname(surname_text.getText());
@@ -62,7 +62,7 @@ public class Function extends Controller {
                         }else{
 
                                 Alert IdAllert = new Alert(Alert.AlertType.ERROR);
-                                IdAllert.setContentText("Poprawność wpisanie okien " +" \n ID :" + FlagID + "\n Pesel: " +FlagPes + "\n Telefon: " +Flagtel);
+                                IdAllert.setContentText("Poprawność wpisanie okien " +" \n ID :" + FlagID + "\n Pesel: " +Flag_Pes + "\n Telefon: " +Flagtel);
                                 IdAllert.show();
                         }
                 }
@@ -70,7 +70,7 @@ public class Function extends Controller {
         }
 
 
-        public void checkID(TextField number_text){
+        public void checkID(TextField number_text) {
                 char[] actualArrayChar = number_text.getText().toCharArray();
                 int x = number_text.getText().length();
                 boolean[] test = new boolean[x];
@@ -93,21 +93,21 @@ public class Function extends Controller {
 
         public void checkPes(TextField pes_text){
                 char[] actualArrayChar = pes_text.getText().toCharArray();
-                int x = pes_text.getText().length();
-                boolean[] test = new boolean[x];
-                for(int i = 0; i< x; i ++)
+                int q = pes_text.getText().length();
+                boolean[] test1 = new boolean[q];
+                for(int i = 0; i< q; i ++)
                 {
                         if(actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9'){
-                                test[i] = true;
-                                FlagPes = true;
+                                test1[i] = true ;
+                                //   FlagID = true;
                         }else{
-                                test[i] = false;
+                                test1[i] = false;
                         }
                 }
-                for(boolean j : test)
+                for(boolean j : test1)
                 {
                         if( j == false){
-                                FlagPes = false;
+                                Flag_Pes = false;
                         }
                 }
         }
@@ -116,13 +116,11 @@ public class Function extends Controller {
                 char[] actualArrayChar = nr_tel.getText().toCharArray();
                 int x = nr_tel.getText().length();
                 boolean[] test = new boolean[x];
-                System.out.println(x);
                 switch (x) {
                         case 9:
                                 for (int i = 0; i < x; i++) {
                                         if (actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9') {
                                                 test[i] = true;
-                                          //      Flagtel = true;
                                         } else {
                                                 test[i] = false;
                                         }

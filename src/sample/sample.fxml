@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<BorderPane minHeight="700.0" minWidth="750.0" prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane minHeight="700.0" minWidth="750.0" prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
 
    <center>
        <TableView id="tabela" fx:id="table_info" layoutY="200" maxHeight="675.0" maxWidth="631.0" prefHeight="672.0" prefWidth="570.0">
@@ -58,11 +58,11 @@
             <TextField fx:id="number_text" layoutX="26.0" layoutY="99.0" onKeyPressed="#checkID" promptText="Id" visible="false" />
             <TextField fx:id="name_text" layoutX="26.0" layoutY="133.0" promptText="Imie" visible="false" />
             <TextField fx:id="surname_text" layoutX="26.0" layoutY="168.0" promptText="Nazwisko" visible="false" />
-            <TextField fx:id="pes_text" layoutX="26.0" layoutY="168.0" onKeyPressed="#checkPes" promptText="Pesel" visible="false" />
+            <TextField fx:id="pes_text" layoutX="26.0" layoutY="168.0"  onKeyPressed="#checkPes" promptText="Pesel" visible="false" />
             <TextField fx:id="nr_tel" layoutX="26.0" layoutY="168.0" onKeyPressed="#checktel" promptText="Numer Telefonu" visible="false" />
             <Button fx:id="button1test" layoutX="74.0" layoutY="47.0" mnemonicParsing="false" onAction="#AddButton1" text="Dodaj nowy wpis" visible="false" />
             <Button fx:id="buttonback" layoutX="74.0" layoutY="87.0" mnemonicParsing="false" onAction="#ButtonBack" text="Powrót" visible="false" />
-            <Button fx:id="editButton" layoutX="55.0" layoutY="209.0" mnemonicParsing="false" text="Button" visible="false"/>
+            <Button fx:id="editButton" layoutX="55.0" layoutY="209.0" mnemonicParsing="false" text="Button" visible="false" />
             <Separator layoutX="169.0" layoutY="8.0" orientation="VERTICAL" prefHeight="651.0" prefWidth="1.0" />
 
 

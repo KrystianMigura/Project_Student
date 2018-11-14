@@ -6,7 +6,7 @@ public class users extends Controller{
     String id;
     String name;
     String surname;
-    String pesel;
+    String pes;
     String nr_tel;
     Button editButton;
 
@@ -47,11 +47,11 @@ public class users extends Controller{
     }
 
     public String getPesel() {
-        return pesel;
+        return pes;
     }
 
-    public void setPesel(String pesel) {
-        this.pesel = pesel;
+    public void setPesel(String pes) {
+        this.pes = pes;
     }
 
     public String getNr_tel() {
@@ -62,11 +62,11 @@ public class users extends Controller{
         this.nr_tel = nr_tel;
     }
 
-    public users(String id, String name, String surname, String pesel, String nr_tel, Button editButton) {
+    public users(String id, String name, String surname, String pes, String nr_tel, Button editButton) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.pesel = pesel;
+        this.pes = pes;
         this.nr_tel = nr_tel;
         this.editButton = new Button("Edycja");
     }

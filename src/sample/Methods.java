@@ -129,7 +129,7 @@ public class Methods extends Controller implements Initializable {
            fadeTransition.play();
        }
 
-        public void Tableinback(TableView table_info, TextField surname_text, TextField name_text, TextField nr_tel, TextField pesel_text, TextField number_text, Button button1test, Button buttonback) {
+        public void Tableinback(TableView table_info, TextField surname_text, TextField name_text, TextField nr_tel, TextField pes_text, TextField number_text, Button button1test, Button buttonback) {
             FadeTransition fadeTransition = new FadeTransition();
             fadeTransition.setDuration(Duration.millis(2500));
             fadeTransition.setNode(table_info);
@@ -142,29 +142,16 @@ public class Methods extends Controller implements Initializable {
                 surname_text.setVisible(false);
                 name_text.setVisible(false);
                 nr_tel.setVisible(false);
-                pesel_text.setVisible(false);
+                pes_text.setVisible(false);
                 number_text.setVisible(false);
                 buttonback.setVisible(false);
                 button1test.setVisible(false);
             fadeTransition.play();
-        }}
+        }
 
 
+}
 
-
-
-
-////
-////     public static void checkval() {
-//        char[] actualArrayChar = Controller.allControl.number_text.getText().toCharArray();
-//        int x = Controller.allControl.number_text.getText().length();
-//            for(int i = 0; i< x; i ++)
-//            {
-//                if(actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9'){
-//                    Controller.allControl.FlagID = true ;
-//                }
-//            }
-//        }
 
 
 

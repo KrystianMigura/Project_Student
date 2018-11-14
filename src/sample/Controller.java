@@ -82,10 +82,6 @@ public class Controller implements Initializable {
         }
     }
 
-
-
-
-
 public void ButtonBack(){
     Methods met = new Methods();
     Add_Button.setDisable(false);
@@ -108,119 +104,8 @@ public void ButtonBack(){
 
     public void AddButton1()  {
     Function testowa = new Function();
-    testowa.testprzycuski(number_text,name_text,surname_text,pes_text,nr_tel, editButton, table_info);
-        //
-//if( (number_text.getText().trim().isEmpty() || number_text.getText() == null)||
-//    (name_text.getText().trim().isEmpty() || name_text.getText() == null)||
-//    (surname_text.getText().trim().isEmpty() || surname_text.getText() == null)||
-//    (pesel_text.getText().trim().isEmpty() || pesel_text.getText() == null)||
-//    (nr_tel.getText().trim().isEmpty() || nr_tel.getText() == null)){
-//         Alert information = new Alert(Alert.AlertType.ERROR);
-//        information.setContentText("nie zostala wprowadzona jedna z wartości " );
-//        information.setHeaderText("!!!!!!!!!!!" );
-//        information.showAndWait();
-//}else{
-//    users as = new users();
-//    FlagID = false;
-//    FlagPesel = false;
-//    checkID();
-//    checkPesel();
-//    checkneTel();
-//if( FlagID != false && FlagPesel !=false && Flagtel != false) {
-//    as.setId(number_text.getText());
-//    as.setName(name_text.getText());
-//    as.setSurname(surname_text.getText());
-//    as.setPesel(pesel_text.getText());
-//    as.setNr_tel(nr_tel.getText());
-//    as.setEdit(editButton); // ------------>zrobić dodawanie buttona bo nie działa
-//
-//    number_text.clear();
-//    name_text.clear();
-//    pesel_text.clear();
-//    nr_tel.clear();
-//    surname_text.clear();
-//    table_info.getItems().add(as);
-//
-//}else{
-//
-//        Alert IdAllert = new Alert(Alert.AlertType.ERROR);
-//        IdAllert.setContentText("Poprawność wpisanie okien " +" \n ID :" + FlagID + "\n Pesel: " +FlagPesel + "\n Telefon: " +Flagtel);
-//        IdAllert.show();
-//}
-//}
-
+    testowa.testprzycuski(number_text,name_text,surname_text, pes_text,nr_tel, editButton, table_info);
     }
-
-
- // walidacja sprawdzajaca poprawnosc wpisanych znaków
-//    public void checkID(){
-//        char[] actualArrayChar = number_text.getText().toCharArray();
-//        int x = number_text.getText().length();
-//        boolean[] test = new boolean[x];
-//            for(int i = 0; i< x; i ++)
-//            {
-//                if(actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9'){
-//                    test[i] = true ;
-//                    FlagID = true;
-//                }else{
-//                    test[i] = false;
-//                }
-//            }
-//            for(boolean j : test)
-//            {
-//                if( j == false){
-//                    FlagID = false;
-//                }
-//             }
-//        }
-
-//    public void checkPesel(){
-//        char[] actualArrayChar = pesel_text.getText().toCharArray();
-//        int x = pesel_text.getText().length();
-//        boolean[] test = new boolean[x];
-//        for(int i = 0; i< x; i ++)
-//        {
-//            if(actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9'){
-//                test[i] = true ;
-//                FlagPesel = true;
-//            }else{
-//                test[i] = false;
-//            }
-//        }
-//        for(boolean j : test)
-//        {
-//            if( j == false){
-//                FlagPesel = false;
-//            }
-//        }
-//    }
-
-//    public void checkneTel() {
-//        char[] actualArrayChar = nr_tel.getText().toCharArray();
-//        int x = nr_tel.getText().length();
-//        boolean[] test = new boolean[x];
-//        System.out.println(x);
-//        switch (x) {
-//            case 9:
-//                for (int i = 0; i < x; i++) {
-//                    if (actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9') {
-//                        test[i] = true;
-//                        Flagtel = true;
-//                    } else {
-//                        test[i] = false;
-//                    }
-//                }
-//                for (boolean j : test) {
-//                    if (j == false) {
-//                        Flagtel = false;
-//                    }
-//                }
-//                break;
-//            default:
-//                Flagtel = false;
-//                break;
-//        }
-//    }
 
 
 public ObservableList<users> loadData(){
@@ -232,5 +117,3 @@ public ObservableList<users> loadData(){
 
 
 }
-/** test*/
-/** test 2*/
