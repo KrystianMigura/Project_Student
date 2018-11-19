@@ -15,6 +15,7 @@ public class Methods extends Controller implements Initializable {
 
 
 
+
     public void TableOut(TableView table_info){
 
         FadeTransition fadeTransition = new FadeTransition();

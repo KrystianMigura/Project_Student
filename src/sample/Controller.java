@@ -64,14 +64,19 @@ public class Controller implements Initializable {
         col_Tel.setCellValueFactory(new PropertyValueFactory <>("nr_tel"));
         col_Edit.setCellValueFactory(new PropertyValueFactory<>("editButton"));
         table_info.setItems(loadData());
-    }
+        edycjaWiersza.setDisable(true);
+                }
 
+    public void enableButton(){
+        if (table_info.getSelectionModel().getSelectedItem() != null)
+        edycjaWiersza.setDisable(false);
+    }
 
     /* Pierwsza transformacja obiektów wyswietlanych*/
     public void AddButton() throws IOException, InterruptedException {
         Methods met = new Methods();
         Function test = new Function();
-
+        edycjaWiersza.setDisable(true);
 
         Add_Button.setDisable(true);
         met.TableOut(table_info);
@@ -109,6 +114,7 @@ public void ButtonBack(){
     }
 
     public void AddButton1()  {
+
     Function testowa = new Function();
     testowa.testprzycuski(number_text,FirstName_text,surname_text, pes_text,nr_tel, editButton, table_info);
     }
@@ -121,12 +127,13 @@ public ObservableList<users> loadData(){
   }
 
     public void EdycjaWiersza(){
-
-        ObservableList<users> person;
+        ObservableList <users> person;
         person = table_info.getSelectionModel().getSelectedItems();
 
-        System.out.print(person.get(0).getFirstName());
+        if(table_info.getSelectionModel().getSelectedItem() != null) {
 
+            System.out.println("Imie: " + person.get(0).getFirstName() + " Nazwisko: " + person.get(0).getSurname());
+        }
     }
 
 

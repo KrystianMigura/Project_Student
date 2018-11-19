@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
@@ -13,6 +14,9 @@ public class Function extends Controller {
 
 
         }
+
+
+
 
 
 
@@ -57,6 +61,7 @@ public class Function extends Controller {
                                 nr_tel.clear();
                                 surname_text.clear();
                                 table_info.getItems().add(as);
+
 
                         }else{
 
