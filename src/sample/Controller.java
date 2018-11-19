@@ -26,7 +26,7 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn <users, String> col_id;
     @FXML
-    private TableColumn <users, String> col_Imie;
+    private TableColumn <users, String> col_imie;
     @FXML
     private TableColumn <users, String> col_Nazwisko;
     @FXML
@@ -39,7 +39,7 @@ public class Controller implements Initializable {
     @FXML
     public TextField number_text;
     @FXML
-    public TextField name_text;
+    public TextField FirstName_text;
     @FXML
     public TextField surname_text;
     @FXML
@@ -53,9 +53,9 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle sample) {
         col_id.setCellValueFactory(new PropertyValueFactory <>("id"));
-        col_Imie.setCellValueFactory(new PropertyValueFactory <>("name"));
+        col_imie.setCellValueFactory(new PropertyValueFactory <>("FirstName"));
         col_Nazwisko.setCellValueFactory(new PropertyValueFactory <>("surname"));
-        col_Pesel.setCellValueFactory(new PropertyValueFactory <>("pesel"));
+        col_Pesel.setCellValueFactory(new PropertyValueFactory <>("pes"));
         col_Tel.setCellValueFactory(new PropertyValueFactory <>("nr_tel"));
         col_Edit.setCellValueFactory(new PropertyValueFactory<>("Edycja"));
         table_info.setItems(loadData());
@@ -67,11 +67,12 @@ public class Controller implements Initializable {
         Methods met = new Methods();
         Function test = new Function();
 
+
         Add_Button.setDisable(true);
         met.TableOut(table_info);
         met.ButtonShow(button1test);
         met.number_text(number_text);
-        met.name_text(name_text);
+        met.name_text(FirstName_text);
         met.surname_text(surname_text);
         met.pes_text(pes_text);
         met.nr_tel(nr_tel);
@@ -85,7 +86,7 @@ public class Controller implements Initializable {
 public void ButtonBack(){
     Methods met = new Methods();
     Add_Button.setDisable(false);
-    met.Tableinback(table_info, surname_text,  name_text, nr_tel, pes_text, number_text, button1test, buttonback);
+    met.Tableinback(table_info, surname_text,  FirstName_text, nr_tel, pes_text, number_text, button1test, buttonback);
 }
 
     public void checkID() {
@@ -104,7 +105,7 @@ public void ButtonBack(){
 
     public void AddButton1()  {
     Function testowa = new Function();
-    testowa.testprzycuski(number_text,name_text,surname_text, pes_text,nr_tel, editButton, table_info);
+    testowa.testprzycuski(number_text,FirstName_text,surname_text, pes_text,nr_tel, editButton, table_info);
     }
 
 

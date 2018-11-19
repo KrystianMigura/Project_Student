@@ -17,7 +17,7 @@
        <TableView id="tabela" fx:id="table_info" layoutY="200" maxHeight="675.0" maxWidth="631.0" prefHeight="672.0" prefWidth="570.0">
        <columns>
            <TableColumn fx:id="col_id" prefWidth="35.0" resizable="false" text="id" />
-           <TableColumn fx:id="col_Imie" prefWidth="110.0" resizable="false" text="Imie" />
+           <TableColumn fx:id="col_imie" prefWidth="110.0" resizable="false" text="imie" />
            <TableColumn fx:id="col_Nazwisko" prefWidth="110.0" resizable="false" text="Nazwisko" />
            <TableColumn fx:id="col_Pesel" prefWidth="90.0" resizable="false" text="Pesel" />
            <TableColumn fx:id="col_Tel" prefWidth="110.0" resizable="false" text="Nmuer_Telefonu" />
@@ -56,9 +56,9 @@
 
             <Button fx:id="Add_Button" layoutX="26.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AddButton" prefHeight="25.0" prefWidth="110.0" snapToPixel="false" text="Dodaj" />
             <TextField fx:id="number_text" layoutX="26.0" layoutY="99.0" onKeyPressed="#checkID" promptText="Id" visible="false" />
-            <TextField fx:id="name_text" layoutX="26.0" layoutY="133.0" promptText="Imie" visible="false" />
+            <TextField fx:id="FirstName_text" layoutX="26.0" layoutY="133.0" promptText="FirstName" visible="false" />
             <TextField fx:id="surname_text" layoutX="26.0" layoutY="168.0" promptText="Nazwisko" visible="false" />
-            <TextField fx:id="pes_text" layoutX="26.0" layoutY="168.0"  onKeyPressed="#checkPes" promptText="Pesel" visible="false" />
+            <TextField fx:id="pes_text" layoutX="26.0" layoutY="168.0" onKeyPressed="#checkPes" promptText="Pesel" visible="false" />
             <TextField fx:id="nr_tel" layoutX="26.0" layoutY="168.0" onKeyPressed="#checktel" promptText="Numer Telefonu" visible="false" />
             <Button fx:id="button1test" layoutX="74.0" layoutY="47.0" mnemonicParsing="false" onAction="#AddButton1" text="Dodaj nowy wpis" visible="false" />
             <Button fx:id="buttonback" layoutX="74.0" layoutY="87.0" mnemonicParsing="false" onAction="#ButtonBack" text="Powrót" visible="false" />

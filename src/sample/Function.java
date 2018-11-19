@@ -25,7 +25,7 @@ public class Function extends Controller {
         Boolean FlagID = true;
         Boolean Flag_Pes = true;
         Boolean Flagtel = true;
-        public void testprzycuski(TextField number_text, TextField pes_text, TextField name_text, TextField surname_text, TextField nr_tel,  Button editButton, TableView table_info){
+        public void testprzycuski(TextField number_text, TextField name_text, TextField surname_text, TextField pes_text, TextField nr_tel, Button editButton, TableView <users> table_info){
 
 
                 if( (number_text.getText().trim().isEmpty() || number_text.getText() == null)||
@@ -41,12 +41,11 @@ public class Function extends Controller {
                         users as = new users();
                         checkPes(pes_text);
                         checkID(number_text);
-
                         checkTel(nr_tel);
 
                         if( FlagID != false && Flag_Pes != false && Flagtel != false) {
                                 as.setId(number_text.getText());
-                                as.setName(name_text.getText());
+                                as.setFirstName(name_text.getText());
                                 as.setSurname(surname_text.getText());
                                 as.setPesel(pes_text.getText());
                                 as.setNr_tel(nr_tel.getText());
@@ -91,7 +90,7 @@ public class Function extends Controller {
                 }
         }
 
-        public void checkPes(TextField pes_text){
+  public void checkPes(TextField pes_text){
                 char[] actualArrayChar = pes_text.getText().toCharArray();
                 int q = pes_text.getText().length();
                 boolean[] test1 = new boolean[q];
@@ -110,9 +109,9 @@ public class Function extends Controller {
                                 Flag_Pes = false;
                         }
                 }
-        }
+      }
 
-        public void checkTel(TextField nr_tel) {
+       public void checkTel(TextField nr_tel) {
                 char[] actualArrayChar = nr_tel.getText().toCharArray();
                 int x = nr_tel.getText().length();
                 boolean[] test = new boolean[x];

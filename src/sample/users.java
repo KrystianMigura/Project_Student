@@ -1,24 +1,27 @@
 package sample;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 public class users extends Controller{
     String id;
-    String name;
+    String FirstName;
     String surname;
     String pes;
     String nr_tel;
     Button editButton;
 
-    public Button getEdit() {
-        return editButton;
+    //public users(){};
+
+    public users(String id, String FirstName, String surname, String pes, String nr_tel, Button editButton) {
+        this.id = id;
+        this.FirstName = FirstName;
+        this.surname = surname;
+        this.pes = pes;
+        this.nr_tel = nr_tel;
+        this.editButton = new Button("Edycja");
     }
-
-    public void setEdit(Button edit) {
-        this.editButton = edit;
-
-    }
-
+    public users(){}
 
 
 
@@ -26,51 +29,32 @@ public class users extends Controller{
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String id) {this.id = id;}
+
+    public String getFirstName() { return FirstName;}
+
+    public void setFirstName(String FirstName) { this.FirstName = FirstName;}
+
+    public String getPes() {return pes;}
+
+    public void setPes(String pes) {this.pes = pes;}
+
+    public Button getEdit() {
+        return editButton;
     }
 
-    public String getName() {
-        return name;
-    }
+    public void setEdit(Button edit) {this.editButton = edit;}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getSurname() {return surname;}
 
-    public String getSurname() {
-        return surname;
-    }
+    public void setSurname(String surname) {this.surname = surname;}
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
+    public String getPesel() {return pes;}
 
-    public String getPesel() {
-        return pes;
-    }
+    public void setPesel(String pes) {this.pes = pes;}
 
-    public void setPesel(String pes) {
-        this.pes = pes;
-    }
+    public String getNr_tel() {return nr_tel;}
 
-    public String getNr_tel() {
-        return nr_tel;
-    }
-
-    public void setNr_tel(String nr_tel) {
-        this.nr_tel = nr_tel;
-    }
-
-    public users(String id, String name, String surname, String pes, String nr_tel, Button editButton) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.pes = pes;
-        this.nr_tel = nr_tel;
-        this.editButton = new Button("Edycja");
-    }
-public users(){};
-
+    public void setNr_tel(String nr_tel) {this.nr_tel = nr_tel;}
 
 }
