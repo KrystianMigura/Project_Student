@@ -1,12 +1,14 @@
 package sample;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,6 +24,8 @@ public class Controller implements Initializable {
     @FXML
     public Button Add_Button;
     @FXML
+    public Button edycjaWiersza;
+    @FXML
     public TableView <users> table_info;
     @FXML
     private TableColumn <users, String> col_id;
@@ -34,7 +38,8 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn <users, String> col_Pesel;
     @FXML
-    private TableColumn <users, String> col_Edit;
+    private TableColumn <users, Button> col_Edit;
+
 
     @FXML
     public TextField number_text;
@@ -57,7 +62,7 @@ public class Controller implements Initializable {
         col_Nazwisko.setCellValueFactory(new PropertyValueFactory <>("surname"));
         col_Pesel.setCellValueFactory(new PropertyValueFactory <>("pes"));
         col_Tel.setCellValueFactory(new PropertyValueFactory <>("nr_tel"));
-        col_Edit.setCellValueFactory(new PropertyValueFactory<>("Edycja"));
+        col_Edit.setCellValueFactory(new PropertyValueFactory<>("editButton"));
         table_info.setItems(loadData());
     }
 
@@ -115,6 +120,14 @@ public ObservableList<users> loadData(){
        return data_table;
   }
 
+    public void EdycjaWiersza(){
+
+        ObservableList<users> person;
+        person = table_info.getSelectionModel().getSelectedItems();
+
+        System.out.print(person.get(0).getFirstName());
+
+    }
 
 
 }

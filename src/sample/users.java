@@ -19,7 +19,7 @@ public class users extends Controller{
         this.surname = surname;
         this.pes = pes;
         this.nr_tel = nr_tel;
-        this.editButton = new Button("Edycja");
+        this.editButton = editButton;
     }
     public users(){}
 
@@ -39,19 +39,13 @@ public class users extends Controller{
 
     public void setPes(String pes) {this.pes = pes;}
 
-    public Button getEdit() {
-        return editButton;
-    }
+    public Button getEdit() {return editButton;}
 
     public void setEdit(Button edit) {this.editButton = edit;}
 
     public String getSurname() {return surname;}
 
     public void setSurname(String surname) {this.surname = surname;}
-
-    public String getPesel() {return pes;}
-
-    public void setPesel(String pes) {this.pes = pes;}
 
     public String getNr_tel() {return nr_tel;}
 

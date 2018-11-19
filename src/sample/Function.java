@@ -47,9 +47,9 @@ public class Function extends Controller {
                                 as.setId(number_text.getText());
                                 as.setFirstName(name_text.getText());
                                 as.setSurname(surname_text.getText());
-                                as.setPesel(pes_text.getText());
+                                as.setPes(pes_text.getText());
                                 as.setNr_tel(nr_tel.getText());
-                                as.setEdit(editButton); // ------------>zrobić dodawanie buttona bo nie działa
+                                as.setEdit(new Button("54654") ); // ------------>zrobić dodawanie buttona bo nie działa
 
                                 number_text.clear();
                                 name_text.clear();
@@ -69,7 +69,7 @@ public class Function extends Controller {
         }
 
 
-        public void checkID(TextField number_text) {
+  public void checkID(TextField number_text) {
                 char[] actualArrayChar = number_text.getText().toCharArray();
                 int x = number_text.getText().length();
                 boolean[] test = new boolean[x];
@@ -77,7 +77,6 @@ public class Function extends Controller {
                 {
                         if(actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9'){
                                 test[i] = true ;
-                             //   FlagID = true;
                         }else{
                                 test[i] = false;
                         }
@@ -94,24 +93,29 @@ public class Function extends Controller {
                 char[] actualArrayChar = pes_text.getText().toCharArray();
                 int q = pes_text.getText().length();
                 boolean[] test1 = new boolean[q];
-                for(int i = 0; i< q; i ++)
-                {
-                        if(actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9'){
-                                test1[i] = true ;
-                                //   FlagID = true;
-                        }else{
-                                test1[i] = false;
+                switch(q) {
+                        case 11:
+                        for (int i = 0; i < q; i++) {
+                                if (actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9') {
+                                        test1[i] = true;
+                                        //   FlagID = true;
+                                } else {
+                                        test1[i] = false;
+                                }
                         }
-                }
-                for(boolean j : test1)
-                {
-                        if( j == false){
+                        for (boolean j : test1) {
+                                if (j == false) {
+                                        Flag_Pes = false;
+                                }
+                        }
+                        break;
+                        default:
                                 Flag_Pes = false;
-                        }
+                                break;
                 }
       }
 
-       public void checkTel(TextField nr_tel) {
+  public void checkTel(TextField nr_tel) {
                 char[] actualArrayChar = nr_tel.getText().toCharArray();
                 int x = nr_tel.getText().length();
                 boolean[] test = new boolean[x];
