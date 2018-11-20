@@ -61,7 +61,7 @@ public class Controller implements Initializable {
         col_Nazwisko.setCellValueFactory(new PropertyValueFactory <>("surname"));
         col_Pesel.setCellValueFactory(new PropertyValueFactory <>("pes"));
         col_Tel.setCellValueFactory(new PropertyValueFactory <>("nr_tel"));
-        col_Edit.setCellValueFactory(new PropertyValueFactory<>("editButton"));
+//        col_Edit.setCellValueFactory(new PropertyValueFactory<>("editButton"));
 
         table_info.setEditable(true);
         col_id.setCellFactory(TextFieldTableCell.forTableColumn());

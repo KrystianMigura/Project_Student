@@ -17,9 +17,9 @@ public class Function extends Controller {
                 return   a = true;
         }
 
-        Boolean FlagID = true;
-        Boolean Flag_Pes = true;
-        Boolean Flagtel = true;
+     private   Boolean FlagID = true;
+     private   Boolean Flag_Pes = true;
+     private   Boolean Flagtel = true;
 
         public void testprzycuski(TextField number_text, TextField name_text, TextField surname_text, TextField pes_text, TextField nr_tel, Button editButton, TableView <users> table_info, Button edycjaWiersza){
 
@@ -29,9 +29,10 @@ public class Function extends Controller {
                         (surname_text.getText().trim().isEmpty() || surname_text.getText() == null)||
                         (pes_text.getText().trim().isEmpty() || pes_text.getText() == null)||
                         (nr_tel.getText().trim().isEmpty() || nr_tel.getText() == null)){
-                        Alert information = new Alert(Alert.AlertType.ERROR);
-                        information.setContentText("nie zostala wprowadzona jedna z wartości " );
-                        information.setHeaderText("!!!!!!!!!!!" );
+                        Alert information = new Alert(Alert.AlertType.INFORMATION);
+                        information.setContentText("Wprowadź poprawne wartości i naciśnij Dodaj nowy wpis." );
+                        information.setHeaderText("Nie wprowadziłeś żadnych wartości." );
+                        information.setTitle("Błąd wprowadzania wartości.");
                         information.showAndWait();
                 }else{
                         users as = new users();
@@ -53,7 +54,7 @@ public class Function extends Controller {
                                 nr_tel.clear();
                                 surname_text.clear();
                                 table_info.getItems().add(as);
-                                edycjaWiersza.setDisable(false);
+                              //  edycjaWiersza.setDisable(false);
                                 edycjaWiersza.setText("Edycja OFF");
 
                         }else{

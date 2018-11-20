@@ -12,7 +12,7 @@ public class users extends Controller{
 
     //public users(){};
 
-    public users(String id, String FirstName, String surname, String pes, String nr_tel, Button editButton) {
+     users(String id, String FirstName, String surname, String pes, String nr_tel, Button editButton) {
         this.id = id;
         this.FirstName = FirstName;
         this.surname = surname;
