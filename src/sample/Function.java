@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
@@ -11,25 +10,18 @@ public class Function extends Controller {
 
         Function()
         {
-
-
         }
-
-
-
-
-
 
         public boolean flagtable(Boolean a){
 
                 return   a = true;
         }
 
-
         Boolean FlagID = true;
         Boolean Flag_Pes = true;
         Boolean Flagtel = true;
-        public void testprzycuski(TextField number_text, TextField name_text, TextField surname_text, TextField pes_text, TextField nr_tel, Button editButton, TableView <users> table_info){
+
+        public void testprzycuski(TextField number_text, TextField name_text, TextField surname_text, TextField pes_text, TextField nr_tel, Button editButton, TableView <users> table_info, Button edycjaWiersza){
 
 
                 if( (number_text.getText().trim().isEmpty() || number_text.getText() == null)||
@@ -61,7 +53,8 @@ public class Function extends Controller {
                                 nr_tel.clear();
                                 surname_text.clear();
                                 table_info.getItems().add(as);
-
+                                edycjaWiersza.setDisable(false);
+                                edycjaWiersza.setText("Edycja OFF");
 
                         }else{
 

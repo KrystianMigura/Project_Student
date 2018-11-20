@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.animation.FadeTransition;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -137,9 +138,9 @@ public class Methods extends Controller implements Initializable {
             fadeTransition.setFromValue(0);
             fadeTransition.setToValue(1);
                 table_info.setMaxWidth(631);
-
+                table_info.setDisable(true);
                 table_info.setMaxHeight(672);
-                table_info.setDisable(false);
+               // table_info.setDisable(false);
                 surname_text.setVisible(false);
                 name_text.setVisible(false);
                 nr_tel.setVisible(false);
@@ -147,8 +148,10 @@ public class Methods extends Controller implements Initializable {
                 number_text.setVisible(false);
                 buttonback.setVisible(false);
                 button1test.setVisible(false);
-            fadeTransition.play();
-        }
+                fadeTransition.play();
+
+    }
+
 
 
 }

@@ -14,13 +14,13 @@
 <BorderPane minHeight="700.0" minWidth="750.0" prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
 
    <center>
-       <TableView id="tabela" fx:id="table_info" layoutY="200" maxHeight="675.0" maxWidth="631.0" onMouseClicked="#enableButton" prefHeight="672.0" prefWidth="570.0">
+       <TableView id="tabela" fx:id="table_info" layoutY="200" maxHeight="675.0" maxWidth="631.0" prefHeight="672.0" prefWidth="570.0">
        <columns>
-           <TableColumn fx:id="col_id" prefWidth="35.0" resizable="false" text="id" />
-           <TableColumn fx:id="col_imie" prefWidth="110.0" resizable="false" text="imie" />
-           <TableColumn fx:id="col_Nazwisko" prefWidth="110.0" resizable="false" text="Nazwisko" />
-           <TableColumn fx:id="col_Pesel" prefWidth="90.0" resizable="false" text="Pesel" />
-           <TableColumn fx:id="col_Tel" prefWidth="110.0" resizable="false" text="Nmuer_Telefonu" />
+           <TableColumn fx:id="col_id" onEditCommit="#onEditId" prefWidth="35.0" resizable="false" text="id" />
+           <TableColumn fx:id="col_imie" onEditCommit="#onEditImie" prefWidth="110.0" resizable="false" text="imie" />
+           <TableColumn fx:id="col_Nazwisko" onEditCommit="#OnEditSurname" prefWidth="110.0" resizable="false" text="Nazwisko" />
+           <TableColumn fx:id="col_Pesel" onEditCommit="#onEditPes" prefWidth="90.0" resizable="false" text="Pesel" />
+           <TableColumn fx:id="col_Tel" onEditCommit="#OnEditNrTel" prefWidth="110.0" resizable="false" text="Nmuer_Telefonu" />
            <TableColumn fx:id="col_Edit" prefWidth="114.0" resizable="false" text="Edycja" />
        </columns>
 

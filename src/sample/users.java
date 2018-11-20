@@ -1,7 +1,6 @@
 package sample;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 
 public class users extends Controller{
     String id;

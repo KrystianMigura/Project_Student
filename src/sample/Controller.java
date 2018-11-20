@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
@@ -39,8 +40,6 @@ public class Controller implements Initializable {
     private TableColumn <users, String> col_Pesel;
     @FXML
     private TableColumn <users, Button> col_Edit;
-
-
     @FXML
     public TextField number_text;
     @FXML
@@ -63,14 +62,25 @@ public class Controller implements Initializable {
         col_Pesel.setCellValueFactory(new PropertyValueFactory <>("pes"));
         col_Tel.setCellValueFactory(new PropertyValueFactory <>("nr_tel"));
         col_Edit.setCellValueFactory(new PropertyValueFactory<>("editButton"));
+
+        table_info.setEditable(true);
+        col_id.setCellFactory(TextFieldTableCell.forTableColumn());
+        col_imie.setCellFactory(TextFieldTableCell.forTableColumn());
+        col_Nazwisko.setCellFactory(TextFieldTableCell.forTableColumn());
+        col_Pesel.setCellFactory(TextFieldTableCell.forTableColumn());
+        col_Tel.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        table_info.setDisable(true);
         table_info.setItems(loadData());
         edycjaWiersza.setDisable(true);
+
+
                 }
 
-    public void enableButton(){
+   /* public void enableButton(){
         if (table_info.getSelectionModel().getSelectedItem() != null)
         edycjaWiersza.setDisable(false);
-    }
+ }*/
 
     /* Pierwsza transformacja obiektów wyswietlanych*/
     public void AddButton() throws IOException, InterruptedException {
@@ -96,8 +106,13 @@ public class Controller implements Initializable {
 public void ButtonBack(){
     Methods met = new Methods();
     Add_Button.setDisable(false);
+    if(edycjaWiersza.getText() == "Edycja ON" || edycjaWiersza.getText() == "Edycja OFF")
+    edycjaWiersza.setDisable(false);
+
     met.Tableinback(table_info, surname_text,  FirstName_text, nr_tel, pes_text, number_text, button1test, buttonback);
-}
+
+    }
+
 
     public void checkID() {
         Function a = new Function();
@@ -116,7 +131,8 @@ public void ButtonBack(){
     public void AddButton1()  {
 
     Function testowa = new Function();
-    testowa.testprzycuski(number_text,FirstName_text,surname_text, pes_text,nr_tel, editButton, table_info);
+    testowa.testprzycuski(number_text,FirstName_text,surname_text, pes_text,nr_tel, editButton, table_info, edycjaWiersza);
+
     }
 
 
@@ -127,14 +143,53 @@ public ObservableList<users> loadData(){
   }
 
     public void EdycjaWiersza(){
+
         ObservableList <users> person;
         person = table_info.getSelectionModel().getSelectedItems();
 
-        if(table_info.getSelectionModel().getSelectedItem() != null) {
+        if(edycjaWiersza.getText()=="Edycja OFF"){
+            edycjaWiersza.setText("Edycja ON");
+            table_info.setDisable(false);
+            }
+            else
+            {
+                edycjaWiersza.setText("Edycja OFF");
+                table_info.setDisable(true);
+            }
 
+
+
+
+        if(table_info.getSelectionModel().getSelectedItem() != null) {
             System.out.println("Imie: " + person.get(0).getFirstName() + " Nazwisko: " + person.get(0).getSurname());
+            String x = "asdf";
         }
     }
 
+// edycja komorki imie
+    public void onEditImie(TableColumn.CellEditEvent<users, String> usersStringCellEditEvent) {
+        users user = table_info.getSelectionModel().getSelectedItem();
+        user.setFirstName(usersStringCellEditEvent.getNewValue());
+    }
 
+    public void onEditId(TableColumn.CellEditEvent<users, String> usersStringCellEditEvent) {
+        users user = table_info.getSelectionModel().getSelectedItem();
+        user.setId(usersStringCellEditEvent.getNewValue());
+    }
+
+    public void OnEditSurname(TableColumn.CellEditEvent<users, String> usersStringCellEditEvent) {
+        users user = table_info.getSelectionModel().getSelectedItem();
+        user.setSurname(usersStringCellEditEvent.getNewValue());
+    }
+
+
+    public void onEditPes(TableColumn.CellEditEvent<users, String> usersStringCellEditEvent) {
+        users user = table_info.getSelectionModel().getSelectedItem();
+        user.setPes(usersStringCellEditEvent.getNewValue());
+    }
+
+    public void OnEditNrTel(TableColumn.CellEditEvent<users, String> usersStringCellEditEvent) {
+        users user = table_info.getSelectionModel().getSelectedItem();
+        user.setNr_tel(usersStringCellEditEvent.getNewValue());
+    }
 }
