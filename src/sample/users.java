@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 
 public class users extends Controller{
     String id;
@@ -8,21 +9,25 @@ public class users extends Controller{
     String surname;
     String pes;
     String nr_tel;
-    Button editButton;
+    ChoiceBox typ;
 
     //public users(){};
 
-     users(String id, String FirstName, String surname, String pes, String nr_tel, Button editButton) {
+     users(String id, String FirstName, String surname, String pes, String nr_tel, ChoiceBox typ) {
         this.id = id;
         this.FirstName = FirstName;
         this.surname = surname;
         this.pes = pes;
         this.nr_tel = nr_tel;
-        this.editButton = editButton;
+        this.typ = typ;
+
     }
     public users(){}
 
 
+    public ChoiceBox getTyp() {return typ;}
+
+    public void setTyp(ChoiceBox typ) {this.typ = typ;}
 
     public String getId() {
         return id;

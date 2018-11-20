@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.util.Duration;
@@ -112,6 +113,19 @@ public class Methods extends Controller implements Initializable {
             buttonback.setLayoutX(204);
             buttonback.setLayoutY(108);
         fadeTransition.play();
+    }
+
+    public void choiceBox(ChoiceBox typ){
+        FadeTransition fadeTransition = new FadeTransition();
+        fadeTransition.setDuration(Duration.millis(3000));
+        fadeTransition.setNode(typ);
+        fadeTransition.setFromValue(0);
+        fadeTransition.setToValue(1);
+        typ.setVisible(true);
+     //   nr_tel.setLayoutX(504);
+      //  nr_tel.setLayoutY(87);
+        fadeTransition.play();
+
     }
 
 

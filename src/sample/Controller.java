@@ -39,7 +39,7 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn <users, String> col_Pesel;
     @FXML
-    private TableColumn <users, Button> col_Edit;
+    private TableColumn <users, String> col_Uprawnienia;
     @FXML
     public TextField number_text;
     @FXML
@@ -50,6 +50,8 @@ public class Controller implements Initializable {
     public TextField pes_text;
     @FXML
     public TextField nr_tel;
+    @FXML
+    public ChoiceBox typ;
 
     boolean a = false;
 
@@ -61,7 +63,8 @@ public class Controller implements Initializable {
         col_Nazwisko.setCellValueFactory(new PropertyValueFactory <>("surname"));
         col_Pesel.setCellValueFactory(new PropertyValueFactory <>("pes"));
         col_Tel.setCellValueFactory(new PropertyValueFactory <>("nr_tel"));
-//        col_Edit.setCellValueFactory(new PropertyValueFactory<>("editButton"));
+        col_Uprawnienia.setCellValueFactory(new PropertyValueFactory<>("typ")); //nie dodaje sie
+
 
         table_info.setEditable(true);
         col_id.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -73,7 +76,7 @@ public class Controller implements Initializable {
         table_info.setDisable(true);
         table_info.setItems(loadData());
         edycjaWiersza.setDisable(true);
-
+        typ.getItems().addAll("Administrator","Moderator","Programista", "Tester", "Użytkownik");
 
                 }
 
@@ -96,6 +99,7 @@ public class Controller implements Initializable {
         met.surname_text(surname_text);
         met.pes_text(pes_text);
         met.nr_tel(nr_tel);
+        met.choiceBox(typ);
         met.ButtonShow2(buttonback);
         if (test.flagtable(a) == true) {
             met.Tablenewposition(table_info);
@@ -131,7 +135,7 @@ public void ButtonBack(){
     public void AddButton1()  {
 
     Function testowa = new Function();
-    testowa.testprzycuski(number_text,FirstName_text,surname_text, pes_text,nr_tel, editButton, table_info, edycjaWiersza);
+    testowa.testprzycuski(number_text,FirstName_text,surname_text, pes_text,nr_tel, typ, table_info, edycjaWiersza);
 
     }
 

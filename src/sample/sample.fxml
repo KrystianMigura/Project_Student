@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -17,10 +18,11 @@
        <TableView id="tabela" fx:id="table_info" layoutY="200" maxHeight="675.0" maxWidth="631.0" prefHeight="673.0" prefWidth="449.0">
        <columns>
            <TableColumn fx:id="col_id" onEditCommit="#onEditId" prefWidth="35.0" resizable="false" sortable="false" text="id" />
-           <TableColumn fx:id="col_imie" onEditCommit="#onEditImie" prefWidth="110.0" resizable="false" sortable="false" text="imie" />
-           <TableColumn fx:id="col_Nazwisko" onEditCommit="#OnEditSurname" prefWidth="110.0" resizable="false" sortable="false" text="Nazwisko" />
-           <TableColumn fx:id="col_Pesel" onEditCommit="#onEditPes" prefWidth="144.0" resizable="false" sortable="false" text="Pesel" />
-           <TableColumn fx:id="col_Tel" onEditCommit="#OnEditNrTel" prefWidth="170.0" resizable="false" sortable="false" text="Nmuer_Telefonu" />
+           <TableColumn fx:id="col_imie" onEditCommit="#onEditImie" prefWidth="110.0" resizable="false" sortable="false" text="Imie" />
+           <TableColumn fx:id="col_Nazwisko" onEditCommit="#OnEditSurname" prefWidth="91.0" resizable="false" sortable="false" text="Nazwisko" />
+           <TableColumn fx:id="col_Pesel" onEditCommit="#onEditPes" prefWidth="109.0" resizable="false" sortable="false" text="Pesel" />
+           <TableColumn fx:id="col_Tel" onEditCommit="#OnEditNrTel" prefWidth="115.0" resizable="false" sortable="false" text="Nmuer_Telefonu" />
+            <TableColumn fx:id="col_Uprawnienia" prefWidth="75.0" text="Uprawnienia" />
        </columns>
 
        <columnResizePolicy>
@@ -64,6 +66,7 @@
             <Button fx:id="editButton" layoutX="55.0" layoutY="209.0" mnemonicParsing="false" text="EditButton" visible="false" />
             <Separator layoutX="169.0" layoutY="8.0" orientation="VERTICAL" prefHeight="651.0" prefWidth="1.0" />
             <Button fx:id="edycjaWiersza" layoutX="26.0" layoutY="60.0" mnemonicParsing="false" onAction="#EdycjaWiersza" prefHeight="25.0" prefWidth="111.0" text="Edycja" />
+            <ChoiceBox fx:id="typ" layoutX="506.0" layoutY="127.0" prefWidth="148.0" visible="false" />
 
 
          </children>

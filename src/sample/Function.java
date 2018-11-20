@@ -1,9 +1,6 @@
 package sample;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class Function extends Controller {
 
@@ -21,7 +18,7 @@ public class Function extends Controller {
      private   Boolean Flag_Pes = true;
      private   Boolean Flagtel = true;
 
-        public void testprzycuski(TextField number_text, TextField name_text, TextField surname_text, TextField pes_text, TextField nr_tel, Button editButton, TableView <users> table_info, Button edycjaWiersza){
+        public void testprzycuski(TextField number_text, TextField name_text, TextField surname_text, TextField pes_text, TextField nr_tel, ChoiceBox typ, TableView <users> table_info, Button edycjaWiersza){
 
 
                 if( (number_text.getText().trim().isEmpty() || number_text.getText() == null)||
@@ -46,6 +43,7 @@ public class Function extends Controller {
                                 as.setSurname(surname_text.getText());
                                 as.setPes(pes_text.getText());
                                 as.setNr_tel(nr_tel.getText());
+                                as.setTyp(typ);
                                 as.setEdit(new Button("54654") ); // ------------>zrobić dodawanie buttona bo nie działa
 
                                 number_text.clear();
