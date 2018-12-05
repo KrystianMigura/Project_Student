@@ -51,7 +51,7 @@ public class Controller implements Initializable {
     @FXML
     public TextField nr_tel;
     @FXML
-    public ChoiceBox typ;
+    public TextField typ;
 
     boolean a = false;
 
@@ -63,7 +63,7 @@ public class Controller implements Initializable {
         col_Nazwisko.setCellValueFactory(new PropertyValueFactory <>("surname"));
         col_Pesel.setCellValueFactory(new PropertyValueFactory <>("pes"));
         col_Tel.setCellValueFactory(new PropertyValueFactory <>("nr_tel"));
-        col_Uprawnienia.setCellValueFactory(new PropertyValueFactory<>("typ")); //nie dodaje sie
+        col_Uprawnienia.setCellValueFactory(new PropertyValueFactory<>("typ"));
 
 
         table_info.setEditable(true);
@@ -76,7 +76,7 @@ public class Controller implements Initializable {
         table_info.setDisable(true);
         table_info.setItems(loadData());
         edycjaWiersza.setDisable(true);
-        typ.getItems().addAll("Administrator","Moderator","Programista", "Tester", "Użytkownik");
+        //typ.getItems().addAll("Administrator","Moderator","Programista", "Tester", "Użytkownik");
 
                 }
 
@@ -101,6 +101,7 @@ public class Controller implements Initializable {
         met.nr_tel(nr_tel);
         met.choiceBox(typ);
         met.ButtonShow2(buttonback);
+
         if (test.flagtable(a) == true) {
             met.Tablenewposition(table_info);
 
@@ -113,8 +114,8 @@ public void ButtonBack(){
     if(edycjaWiersza.getText() == "Edycja ON" || edycjaWiersza.getText() == "Edycja OFF")
     edycjaWiersza.setDisable(false);
 
-    met.Tableinback(table_info, surname_text,  FirstName_text, nr_tel, pes_text, number_text, button1test, buttonback);
-
+    met.Tableinback(table_info, surname_text,  FirstName_text, nr_tel, pes_text, number_text, button1test, buttonback, typ);
+   // typ.setLayoutY(900);
     }
 
 
@@ -135,7 +136,7 @@ public void ButtonBack(){
     public void AddButton1()  {
 
     Function testowa = new Function();
-    testowa.testprzycuski(number_text,FirstName_text,surname_text, pes_text,nr_tel, typ, table_info, edycjaWiersza);
+    testowa.testprzycuski(number_text,FirstName_text,surname_text, pes_text,nr_tel,typ, table_info, edycjaWiersza);
 
     }
 
@@ -166,7 +167,7 @@ public ObservableList<users> loadData(){
 
         if(table_info.getSelectionModel().getSelectedItem() != null) {
             System.out.println("Imie: " + person.get(0).getFirstName() + " Nazwisko: " + person.get(0).getSurname());
-            String x = "asdf";
+
         }
     }
 
@@ -191,9 +192,39 @@ public ObservableList<users> loadData(){
         users user = table_info.getSelectionModel().getSelectedItem();
         user.setPes(usersStringCellEditEvent.getNewValue());
     }
-
+    boolean Flagtel = true;
     public void OnEditNrTel(TableColumn.CellEditEvent<users, String> usersStringCellEditEvent) {
         users user = table_info.getSelectionModel().getSelectedItem();
         user.setNr_tel(usersStringCellEditEvent.getNewValue());
+
+    }
+
+
+
+    public void checkEdit(String x){
+
+        char[] actualArrayChar = x.toCharArray();
+        int a = x.length();
+        boolean[] test = new boolean[a];
+        switch (a) {
+            case 9:
+                for (int i = 0; i < a; i++) {
+                    if (actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9') {
+                        test[i] = true;
+                    } else {
+                        test[i] = false;
+                    }
+                }
+                for (boolean j : test) {
+                    if (j == false) {
+                        Flagtel = false;
+                    }
+                }
+                break;
+            default:
+                Flagtel = false;
+                break;
+        }
+
     }
 }

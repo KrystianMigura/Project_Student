@@ -115,15 +115,15 @@ public class Methods extends Controller implements Initializable {
         fadeTransition.play();
     }
 
-    public void choiceBox(ChoiceBox typ){
+    public void choiceBox(TextField typ){
         FadeTransition fadeTransition = new FadeTransition();
         fadeTransition.setDuration(Duration.millis(3000));
         fadeTransition.setNode(typ);
         fadeTransition.setFromValue(0);
         fadeTransition.setToValue(1);
         typ.setVisible(true);
-     //   nr_tel.setLayoutX(504);
-      //  nr_tel.setLayoutY(87);
+        typ.setLayoutX(506);
+        typ.setLayoutY(127);
         fadeTransition.play();
 
     }
@@ -145,7 +145,7 @@ public class Methods extends Controller implements Initializable {
            fadeTransition.play();
        }
 
-        public void Tableinback(TableView table_info, TextField surname_text, TextField name_text, TextField nr_tel, TextField pes_text, TextField number_text, Button button1test, Button buttonback) {
+        public void Tableinback(TableView table_info, TextField surname_text, TextField FirstName_text, TextField nr_tel, TextField pes_text, TextField number_text, Button button1test, Button buttonback, TextField typ) {
             FadeTransition fadeTransition = new FadeTransition();
             fadeTransition.setDuration(Duration.millis(2500));
             fadeTransition.setNode(table_info);
@@ -156,12 +156,15 @@ public class Methods extends Controller implements Initializable {
                 table_info.setMaxHeight(672);
                // table_info.setDisable(false);
                 surname_text.setVisible(false);
-                name_text.setVisible(false);
+                FirstName_text.setVisible(false);
                 nr_tel.setVisible(false);
                 pes_text.setVisible(false);
                 number_text.setVisible(false);
                 buttonback.setVisible(false);
                 button1test.setVisible(false);
+                typ.setVisible(false);
+               // typ.setLayoutY(900);
+
                 fadeTransition.play();
 
     }

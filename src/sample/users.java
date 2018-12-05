@@ -9,11 +9,11 @@ public class users extends Controller{
     String surname;
     String pes;
     String nr_tel;
-    ChoiceBox typ;
+    String typ;
 
     //public users(){};
 
-     users(String id, String FirstName, String surname, String pes, String nr_tel, ChoiceBox typ) {
+     users(String id, String FirstName, String surname, String pes, String nr_tel, String typ) {
         this.id = id;
         this.FirstName = FirstName;
         this.surname = surname;
@@ -25,9 +25,9 @@ public class users extends Controller{
     public users(){}
 
 
-    public ChoiceBox getTyp() {return typ;}
+    public String getTyp() {return typ;}
 
-    public void setTyp(ChoiceBox typ) {this.typ = typ;}
+    public void setTyp(String typ) {this.typ = typ;}
 
     public String getId() {
         return id;

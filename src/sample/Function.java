@@ -17,12 +17,13 @@ public class Function extends Controller {
      private   Boolean FlagID = true;
      private   Boolean Flag_Pes = true;
      private   Boolean Flagtel = true;
+     private   Boolean Flagname = true;
+     private   Boolean Flagsurname = true;
 
-        public void testprzycuski(TextField number_text, TextField name_text, TextField surname_text, TextField pes_text, TextField nr_tel, ChoiceBox typ, TableView <users> table_info, Button edycjaWiersza){
-
+        public void testprzycuski(TextField number_text, TextField FirstName_text, TextField surname_text, TextField pes_text, TextField nr_tel, TextField typ, TableView <users> table_info, Button edycjaWiersza){
 
                 if( (number_text.getText().trim().isEmpty() || number_text.getText() == null)||
-                        (name_text.getText().trim().isEmpty() || name_text.getText() == null)||
+                        (FirstName_text.getText().trim().isEmpty() || FirstName_text.getText() == null)||
                         (surname_text.getText().trim().isEmpty() || surname_text.getText() == null)||
                         (pes_text.getText().trim().isEmpty() || pes_text.getText() == null)||
                         (nr_tel.getText().trim().isEmpty() || nr_tel.getText() == null)){
@@ -36,21 +37,26 @@ public class Function extends Controller {
                         checkPes(pes_text);
                         checkID(number_text);
                         checkTel(nr_tel);
+                        checkName(FirstName_text);
+                        checkSurname(surname_text);
 
-                        if( FlagID != false && Flag_Pes != false && Flagtel != false) {
+                        if( FlagID != false && Flag_Pes != false && Flagtel != false && Flagname != false && Flagsurname != false) {
                                 as.setId(number_text.getText());
-                                as.setFirstName(name_text.getText());
+                                as.setFirstName(FirstName_text.getText());
                                 as.setSurname(surname_text.getText());
                                 as.setPes(pes_text.getText());
                                 as.setNr_tel(nr_tel.getText());
-                                as.setTyp(typ);
-                                as.setEdit(new Button("54654") ); // ------------>zrobić dodawanie buttona bo nie działa
+                                as.setTyp(typ.getText());
+                               // as.setEdit(new Button("54654") ); // ------------>zrobić dodawanie buttona bo nie działa
 
                                 number_text.clear();
-                                name_text.clear();
+                                FirstName_text.clear();
                                 pes_text.clear();
                                 nr_tel.clear();
                                 surname_text.clear();
+                                typ.clear();
+
+
                                 table_info.getItems().add(as);
                               //  edycjaWiersza.setDisable(false);
                                 edycjaWiersza.setText("Edycja OFF");
@@ -62,6 +68,7 @@ public class Function extends Controller {
                                 IdAllert.show();
                         }
                 }
+
 
         }
 
@@ -137,5 +144,53 @@ public class Function extends Controller {
                 }
         }
 
+  public void checkName(TextField FirstName_text) {
+        char[] actualArrayChar = FirstName_text.getText().toCharArray();
+        int x = FirstName_text.getText().length();
+        boolean[] test = new boolean[x];
 
+                for (int i = 0; i < x; i++) {
+                    if (actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9') {
+                        test[i] = false;
+                    } else {
+                        test[i] = true;
+                    }
+                }
+                for (boolean j : test) {
+                    if (j == false) {
+                        Flagname = false;
+                        return;
+                    }
+
+
+
+
+
+
+}}
+
+  public void checkSurname(TextField surname_text) {
+        char[] actualArrayChar = surname_text.getText().toCharArray();
+        int x = surname_text.getText().length();
+        boolean[] test = new boolean[x];
+
+        for (int i = 0; i < x; i++) {
+            if (actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9') {
+                test[i] = false;
+            } else {
+                test[i] = true;
+            }
+        }
+        for (boolean j : test) {
+            if (j == false) {
+                Flagsurname = false;
+                return;
+            }
+
+
+
+
+
+
+        }}
 }
