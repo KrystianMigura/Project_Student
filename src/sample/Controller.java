@@ -12,6 +12,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -87,6 +88,7 @@ public class Controller implements Initializable {
 
     /* Pierwsza transformacja obiektów wyswietlanych*/
     public void AddButton() throws IOException, InterruptedException {
+
         Methods met = new Methods();
         Function test = new Function();
         edycjaWiersza.setDisable(true);
@@ -192,39 +194,25 @@ public ObservableList<users> loadData(){
         users user = table_info.getSelectionModel().getSelectedItem();
         user.setPes(usersStringCellEditEvent.getNewValue());
     }
-    boolean Flagtel = true;
-    public void OnEditNrTel(TableColumn.CellEditEvent<users, String> usersStringCellEditEvent) {
+    String spr;
+    public void OnEditNrTel() {
+        checkEdit();
         users user = table_info.getSelectionModel().getSelectedItem();
-        user.setNr_tel(usersStringCellEditEvent.getNewValue());
-
+        user.setNr_tel(spr);
+        table_info.refresh();
     }
 
 
+//edycja nr telefonu działa
+    public void checkEdit(){
+        TextInputDialog checkme = new TextInputDialog();
+        checkme.setTitle("Okno zmiany wartosci");
+        checkme.setHeaderText("Wpisz poprawny nr telefonu");
+        checkme.setContentText("Wprowadz nowy nr telefonu:");
 
-    public void checkEdit(String x){
-
-        char[] actualArrayChar = x.toCharArray();
-        int a = x.length();
-        boolean[] test = new boolean[a];
-        switch (a) {
-            case 9:
-                for (int i = 0; i < a; i++) {
-                    if (actualArrayChar[i] >= '0' && actualArrayChar[i] <= '9') {
-                        test[i] = true;
-                    } else {
-                        test[i] = false;
-                    }
-                }
-                for (boolean j : test) {
-                    if (j == false) {
-                        Flagtel = false;
-                    }
-                }
-                break;
-            default:
-                Flagtel = false;
-                break;
+        Optional<String> result = checkme.showAndWait();
+        if (result.isPresent()){
+            spr = result.get();
         }
 
-    }
-}
+}}

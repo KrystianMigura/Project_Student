@@ -20,7 +20,7 @@
            <TableColumn fx:id="col_imie" onEditCommit="#onEditImie" prefWidth="110.0" resizable="false" sortable="false" text="Imie" />
            <TableColumn fx:id="col_Nazwisko" onEditCommit="#OnEditSurname" prefWidth="91.0" resizable="false" sortable="false" text="Nazwisko" />
            <TableColumn fx:id="col_Pesel" onEditCommit="#onEditPes" prefWidth="109.0" resizable="false" sortable="false" text="Pesel" />
-           <TableColumn fx:id="col_Tel" onEditCommit="#OnEditNrTel" prefWidth="115.0" resizable="false" sortable="false" text="Nmuer_Telefonu" />
+           <TableColumn fx:id="col_Tel" onEditStart="#OnEditNrTel" prefWidth="115.0" resizable="false" sortable="false" text="Nmuer_Telefonu" />
             <TableColumn fx:id="col_Uprawnienia" prefWidth="75.0" text="Stanowisko" />
        </columns>
 
