@@ -11,17 +11,17 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<BorderPane minHeight="700.0" minWidth="750.0" prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane minHeight="700.0" minWidth="750.0" prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
 
    <center>
        <TableView id="tabela" fx:id="table_info" layoutY="200" maxHeight="675.0" maxWidth="631.0" prefHeight="673.0" prefWidth="449.0">
        <columns>
-           <TableColumn fx:id="col_id" onEditCommit="#onEditId" prefWidth="35.0" resizable="false" sortable="false" text="id" />
-           <TableColumn fx:id="col_imie" onEditCommit="#onEditImie" prefWidth="110.0" resizable="false" sortable="false" text="Imie" />
-           <TableColumn fx:id="col_Nazwisko" onEditCommit="#OnEditSurname" prefWidth="91.0" resizable="false" sortable="false" text="Nazwisko" />
-           <TableColumn fx:id="col_Pesel" onEditCommit="#onEditPes" prefWidth="109.0" resizable="false" sortable="false" text="Pesel" />
+           <TableColumn fx:id="col_id" onEditStart="#onEditId" prefWidth="35.0" resizable="false" sortable="false" text="id" />
+           <TableColumn fx:id="col_imie" onEditStart="#onEditImie" prefWidth="110.0" resizable="false" sortable="false" text="Imie" />
+           <TableColumn fx:id="col_Nazwisko" onEditStart="#OnEditSurname" prefWidth="91.0" resizable="false" sortable="false" text="Nazwisko" />
+           <TableColumn fx:id="col_Pesel" onEditStart="#onEditPes" prefWidth="109.0" resizable="false" sortable="false" text="Pesel" />
            <TableColumn fx:id="col_Tel" onEditStart="#OnEditNrTel" prefWidth="115.0" resizable="false" sortable="false" text="Nmuer_Telefonu" />
-            <TableColumn fx:id="col_Uprawnienia" prefWidth="75.0" text="Stanowisko" />
+            <TableColumn fx:id="col_Uprawnienia" onEditStart="#onEditPosition" prefWidth="75.0" text="Stanowisko" />
        </columns>
 
        <columnResizePolicy>
@@ -60,12 +60,12 @@
             <TextField fx:id="surname_text" layoutX="26.0" layoutY="168.0" promptText="Nazwisko" visible="false" />
             <TextField fx:id="pes_text" layoutX="26.0" layoutY="168.0" onKeyPressed="#checkPes" promptText="Pesel" visible="false" />
             <TextField fx:id="nr_tel" layoutX="26.0" layoutY="168.0" onKeyPressed="#checktel" promptText="Numer Telefonu" visible="false" />
+            <TextField fx:id="typ" layoutX="506.0" layoutY="127.0" prefWidth="148.0" promptText="Stanowisko" visible="false" />
             <Button fx:id="button1test" layoutX="74.0" layoutY="47.0" mnemonicParsing="false" onAction="#AddButton1" text="Dodaj nowy wpis" visible="false" />
             <Button fx:id="buttonback" layoutX="74.0" layoutY="87.0" mnemonicParsing="false" onAction="#ButtonBack" text="Powrót" visible="false" />
             <Button fx:id="editButton" layoutX="55.0" layoutY="209.0" mnemonicParsing="false" text="EditButton" visible="false" />
             <Separator layoutX="169.0" layoutY="8.0" orientation="VERTICAL" prefHeight="651.0" prefWidth="1.0" />
             <Button fx:id="edycjaWiersza" layoutX="26.0" layoutY="60.0" mnemonicParsing="false" onAction="#EdycjaWiersza" prefHeight="25.0" prefWidth="111.0" text="Edycja" />
-            <TextField fx:id="typ" layoutX="506.0" layoutY="127.0" prefWidth="148.0" promptText="Stanowisko" visible="false" />
 
 
          </children>
